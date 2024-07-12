@@ -11,6 +11,9 @@ import VideoCard from "../../components/VideoCard";
 
 const Home = () => {
   const { data: posts, reFetch } = useAppwrite(getAllPosts);
+  const { data: latestPosts } = useAppwrite(getAllPosts);
+
+
 
   const [refreshing, setRefreshing] = useState(false);
 
@@ -54,7 +57,7 @@ const Home = () => {
               <Text className="text-gray-300 text-lg font-pregular mb-3">
                 Latest Videos
               </Text>
-              <Trending posts={[{ id: 1 }, { id: 2 }] ?? []} />
+              <Trending posts={latestPosts} />
             </View>
           </View>
         )}
