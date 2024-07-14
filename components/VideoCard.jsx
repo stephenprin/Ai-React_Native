@@ -4,12 +4,11 @@ import { icons } from "../constants";
 import { ResizeMode, Video } from "expo-av";
 
 const VideoCard = ({
-  video: {
-    title,
-    thumbnail,
-    video,
-    creator: { username, avatar },
-  },
+  title,
+  username,
+  avatar,
+  video,
+  thumbnail,
 }) => {
   const [play, setPlay] = useState(false);
   return (
